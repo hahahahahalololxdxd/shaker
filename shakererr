@@ -1,0 +1,26 @@
+local newval = math.random(-10,10) --Picks a random Y offset From (first number) to (second number)
+local newval2 = math.random(-10,10) --Picks a random X offset From (first number) to (second number)
+--david typed it (3 months ago)
+if _G.toggle == nil then
+    _G.toggle = true
+  end
+  
+  if (dx9.GetKey() == "[L]") then --[L] Is the keybind (List of keybinds available https://cultofintellect.com/dx9ware/docs/DX9WARE/DX9WARE%20LUA/GetKey.html) 
+    if _G.toggle == false then
+      _G.toggle = true
+      
+    else
+      _G.toggle = false
+      
+    end
+  end
+
+if _G.toggle == false then
+    dx9.SetAimbotValue("y",newval)
+    dx9.SetAimbotValue("x",newval2)
+end
+
+if _G.toggle == true then
+  dx9.SetAimbotValue("y",0)
+  dx9.SetAimbotValue("x",0)
+end
